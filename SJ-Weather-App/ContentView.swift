@@ -13,11 +13,8 @@ struct ContentView: View {
             BackgroundView(topColor: .blue, bottomColor: Color("lightBlue"))
             
             VStack {
-                Text("San Jose, CA")
-                    .font(.system(size: 32, weight: .medium, design: .default))
-                    .foregroundColor(.white)
-                    .padding()
-
+                CityNameView(cityName: "San Jose")
+                
                 VStack(spacing: 8) {
                     Image(systemName: "cloud.sun.fill")
                         .renderingMode(.original)
@@ -91,5 +88,16 @@ struct BackgroundView: View {
                        startPoint: .topLeading,
                        endPoint: .bottomTrailing)
         .edgesIgnoringSafeArea(.all)
+    }
+}
+
+struct CityNameView: View {
+    var cityName: String
+
+    var body: some View {
+        Text(cityName)
+            .font(.system(size: 32, weight: .medium, design: .default))
+            .foregroundColor(.white)
+            .padding()
     }
 }
